@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "monorepo-keynote",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck src/deck.mdx",
+    "build": "mdx-deck build src/deck.mdx",
+    "publish:deck": "yarn build && gh-pages -d dist",
+    "help": "mdx-deck"
+  },
+  "dependencies": {
+    "code-surfer": "^3.0.0",
+    "gh-pages": "^2.1.1",
+    "mdx-deck": "^1.6.7",
+    "rebass": "^4.0.7",
+    "styled-components": "^4.4.1",
+    "theme-ui": "^0.3.1"
+  }
+}

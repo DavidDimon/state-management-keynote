@@ -1,0 +1,222 @@
+import { Head, themes, Appear } from 'mdx-deck'
+import { CodeSurfer } from "code-surfer"
+import { Content, Image } from './components'
+import customTheme from './theme'
+
+export const theme = customTheme
+
+<Head>
+  <title>State Management</title>
+</Head>
+<Content />
+
+---
+
+## O que é state management?
+
+Como o nome já diz, se trata do gerenciamento dos estados de uma aplicação, que nessa apresentação vai abordar aplicações React web ou react-native.
+
+---
+
+## O que é um estado?
+
+Em uma aplicação react o estado é basicamente uma variável que carrega um dado de um componente.
+
+---
+
+## E para que nós precisamos gerenciar esses estados?
+
+Muitos dos componentes podem possuir estados, e na maioria das vezes esses estados podem precisar serem reaproveitados, é ai que entra o state management
+
+---
+
+## E quais as opções que temos em termos de gerenciamento de estado?
+
+<ul>
+  <Appear>
+    <li>Redux/Mobx</li>
+    <li>Context Api com hooks</li>
+    <li>Event Emitter</li>
+    ou...
+    <li>Passar os estados via props de componente em componente!</li>
+  </Appear>
+</ul>
+
+---
+
+## Via props - como usar?
+
+<Image src="./assets/print1.png"/>
+
+---
+
+## Via props - Prós
+
+<ul>
+  <Appear>
+    <li>Simples e direto</li>
+    <li>Para uma calculadora pode ser o ideal</li>
+  </Appear>
+</ul>
+
+---
+
+## Via props - Contras
+
+<ul>
+  <Appear>
+    <li>Possíveis props duplicadas</li>
+    <li>Muitos re-renders</li>
+    <li>Dificil manutenção</li>
+    <li>Props drilling</li>
+  </Appear>
+</ul>
+
+---
+
+## Props drilling
+
+O props drilling é causado quando você passa props com a mesma instância pra diversos componentes, assim fazendo uma reação em cadeira na hora que esse estado atualizar
+
+---
+
+## Redux
+
+Com esse problema do props drilling, nasceu o redux, para matar de vez esse problema, mas de que jeito?
+
+---
+
+## Redux - Props Drilling
+
+<Image src="./assets/propsdrilling.png" height="75%" width="95%"/>
+
+---
+
+## Redux - Como usar?
+
+<ul>
+  <Appear>
+    <li>Criamos um provider</li>
+    <li>Os types</li>
+    <li>Os reducers</li>
+    <li>As actions</li>
+    <li>...E depois de tudo isso criado</li>
+    <li>Podemos chamar a nossa função/prop no nosso componente através da função connect</li>
+  </Appear>
+</ul>
+
+---
+
+## Redux - Prós
+
+<ul>
+  <Appear>
+    <li>Single source of truth</li>
+    <li>Centralização dos estados</li>
+    <li>Error handling</li>
+    <li>Possibilidades de criar side-effects</li>
+    <li>Debug com devTools</li>
+  </Appear>
+</ul>
+
+---
+
+## Redux - Contras
+
+<ul>
+  <Appear>
+    <li>Grande dependência de uma library</li>
+    <li>O código precisa estar muito bem estruturado para funcionar bem</li>
+    <li>Complexidade na hora de criar novas funções</li>
+    <li>Side-effects...</li>
+  </Appear>
+</ul>
+
+---
+
+## Context Api
+
+Como o nome já diz, seria uma api do proprio React core que disponibiliza uma forma de criar um contexto que podemos utilizar para compartilhar estados ou funções
+
+---
+
+## Context Api 
+
+O próprio redux utiliza o context api para comunicar suas props entre os componentes, e porque não podemos usar da forma mais pura?
+
+---
+
+## Context Api - Como usar?
+
+<Image src="./assets/print2.png"/>
+
+---
+
+## Context Api - Prós
+
+<ul>
+  <Appear>
+    <li>Total controle do contexto</li>
+    <li>Fácilidade na criação</li>
+    <li>Sem necessidade de uma library externa</li>
+  </Appear>
+</ul>
+
+---
+
+## Context Api - Contras
+
+<ul>
+  <Appear>
+    <li>Total responsabilidade do desenvolvedor</li>
+    <li>Atenção redobrada aos re-renders da aplicação</li>
+  </Appear>
+</ul>
+
+---
+
+## Event Emitter
+
+A emissão de eventos é muito comum no backend, muitas vezes feita com grande maestria pelo apache kafka, outras vezes feita com a parte reativa da linguagem(ex: RxJava)
+
+---
+
+## Event Emitter
+
+Existem várias formas de criar um event emitter, porém existe uma forma muito simples de aplicar a emissão de eventos entre componentes
+
+---
+
+## Event Emitter - Como usar?
+
+<Image src="./assets/print3.png" height="120%"/>
+
+---
+
+## Event Emitter - Prós
+
+<ul>
+  <Appear>
+    <li>Podemos criar side-effects de uma forma mais fácil</li>
+    <li>Total liberdade no gerenciamento dos estados e das side-effects</li>
+    <li>Simples e de fácil manutenção</li>
+  </Appear>
+</ul>
+
+---
+
+## Event Emitter - Contras
+
+<ul>
+  <Appear>
+    <li>Total responsabilidade do desenvolvedor</li>
+    <li>Dificil documentação(pelo menos por enquanto)</li>
+    <li>Pode dificultar um pouco o entendimento de novos devs no projeto</li>
+  </Appear>
+</ul>
+
+---
+
+## Thats it 
+
+Dúvidas?
